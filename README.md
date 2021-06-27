@@ -75,19 +75,18 @@ Then, we declared a variable center which will be later used to store the coordi
 - Now we have to decide for this region of circle that which point in it to select for reference and also it's color. But one problem here is in this region there are infinitely many points and we can’t decide by checking for all the points so we have to take a reference point according to which our decision should be made. The most logical for picking this point is to pick the centroid of the contours. By generating the moments we found the centroid of the contour and stored the centroid coordinates in the ‘ center’ variable.
 
  ### Maths Behind Moments 
-Image moments are a set of statistical parameters to measure the distribution of where the pixels are and their intensities. Mathematically, the image moment Mij of order (i,j) for a greyscale image with pixel intensities I(x,y) is calculated as
+Image moments are a set of statistical metrics that quantify the distribution of pixel locations and intensities. The image moment Mij of order (i,j) for a greyscale image with pixel intensities I(x,y) can be calculated mathematically as
 ![moment-1](https://user-images.githubusercontent.com/85826885/123540214-93681600-d75b-11eb-8653-a03ec76e790e.jpg)
 
-Here, x, y refers to the row and column index and I(x,y) refers to the intensity at that location (x,y). Now, let’s discuss how simple image properties are calculated from image moments.
+The row and column indexes are x and y, respectively, and the intensity at that point is I(x,y) (x,y). Let's have a look at how image moments are used to determine basic picture properties.
 ###### Area:
-For a binary image, the zeroth order moment corresponds to the area. Let’s discuss how?
-Using the above formulae, the zeroth order moment (M00) is given by
+The area of a binary image corresponds to the zeroth-order moment. Let's discuss how? Using the above formulae, the zeroth-order moment (M00) is given by
 
 ![moment_0-1](https://user-images.githubusercontent.com/85826885/123540917-1048bf00-d75f-11eb-84f9-35a1fa4b56af.jpg)
 
-For a binary image, this corresponds to counting all the non-zero pixels and that is equivalent to the area. For greyscale image, this corresponds to the sum of pixel intensity values.
+This equates to counting all the non-zero pixels in a binary image, identical to the area. This relates to the sum of pixel intensity values in a greyscale image.
 ###### Centroid:
-Centroid simply is the arithmetic mean position of all the points. In terms of image moments, centroid is given by the relation
+The arithmetic mean position of all the points is the centroid. In terms of image moments, the centroid is given by the relation
 ![moment_cent](https://user-images.githubusercontent.com/85826885/123540927-18086380-d75f-11eb-96fa-cd8e355fbcea.jpg)
 
 This is simple to understand. For instance, for a binary image M10 corresponds to the sum of all non-zero pixels (x-coordinate) and M00 is the total number of non-zero pixels and that is what the centroid is.
