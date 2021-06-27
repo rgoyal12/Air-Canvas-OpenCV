@@ -71,12 +71,16 @@ Here, x, y refers to the row and column index and I(x,y) refers to the intensity
 For a binary image, the zeroth order moment corresponds to the area. Let’s discuss how?
 Using the above formulae, the zeroth order moment (M00) is given by
 
+![moment_0-1](https://user-images.githubusercontent.com/85826885/123540917-1048bf00-d75f-11eb-84f9-35a1fa4b56af.jpg)
+
 
 For a binary image, this corresponds to counting all the non-zero pixels and that is equivalent to the area. For greyscale image, this corresponds to the sum of pixel intensity values.
 ###### Centroid:
 Centroid simply is the arithmetic mean position of all the points. In terms of image moments, centroid is given by the relation
+![moment_cent](https://user-images.githubusercontent.com/85826885/123540927-18086380-d75f-11eb-96fa-cd8e355fbcea.jpg)
 
 This is simple to understand. For instance, for a binary image M10 corresponds to the sum of all non-zero pixels (x-coordinate) and M00 is the total number of non-zero pixels and that is what the centroid is.
+
 
 
 Now comes the part where we decide what action must be taken for a particular point. As stated above we would use the centroid(i.e. center) as reference for deciding the action.
