@@ -5,6 +5,7 @@
  ## Introduction
 
 How wonder it will be if we can draw things by just waving our finger in the air! But this has been made possible by combining digital drawing and smart photo recognition techniques resulting in a hands-free digital drawing canvas called Air Canvas.
+
 We used Python, its libraries like Numpy, Collections, and computer vision techniques of OpenCV to draw anything on the canvas by just capturing the motion of a colored marker with a web camera. We made a basic prototype of Virtual Paint, which enables the user to draw on their system screen by drawing in the air with a bead (we used blue one) which is tracked by the computer webcam. So, to achieve this objective, we used two techniques- Color Detection and Tracking along with the use of masking to keep a track on target bead in real time. 
 
 
@@ -12,14 +13,14 @@ A short example/tutorial with screenshot- with labelling
 
  ## Algorithm
 
-Start reading the frames using a webcam.
-Convert the captured BGR frames to HSV color space.
-Create the Paint window & Canvas frame with putting the respective color palette buttons on it. 
-Create the trackbar window by adjusting the trackbar values according to the color of the marker bead.
-Create the mask by using trackbar position values.
-Processing the mask by using a kernel for smoothening and removing noise with morphological operations(Erosion and dilation).
-Detect the contours and then find the center coordinates of the largest contour and keep storing them in the deques for successive frames.
-Finally, draw the points stored in deques on the frames and canvas window with their respective colors.
+1. Start reading the frames using a webcam.
+2. Convert the captured BGR frames to HSV color space.
+3. Create the Paint window & Canvas frame with putting the respective color palette buttons on it. 
+4. Create the trackbar window by adjusting the trackbar values according to the color of the marker bead.
+5. Create the mask by using trackbar position values.
+6. Processing the mask by using a kernel for smoothening and removing noise with morphological operations(Erosion and dilation).
+7. Detect the contours and then find the center coordinates of the largest contour and keep storing them in the deques for successive frames.
+8. Finally, draw the points stored in deques on the frames and canvas window with their respective colors.
 
 
  ## How We Proceeded
@@ -38,7 +39,7 @@ Then we defined a paintwindow which will be used as a canvas where we used OpenC
 
 And for **drawing on the canvas part**, we used cv2.line() function to join between any two points and then we showed the output on the canvas using cv2.imshow() function
 
-Now comes the actual implementation of our algorithm-
+### Now comes the actual implementation of our algorithm
 
 By using cv2.VideoCapture we captured the live frames, and then for processing of each frame, we run a while loop which will end when the user will press the key ‘q’ on the keyboard. 
 What we basically did in this while loop is we stored the current live frames and then by creating the mask we detected and stored all the tracked points of marker bead (which it traveled) and then took action on those points according to the respective color we chose.
