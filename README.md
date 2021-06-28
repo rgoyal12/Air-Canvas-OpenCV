@@ -1,6 +1,5 @@
 # Air Canvas Project
 ### Members- Lochan Gupta, Rajat Goyal, Utkarsh Agrawal
-### Mentors- Akshay Gupta, Shivanshu Tyagi
  
  ## Introduction
 
